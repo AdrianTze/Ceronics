@@ -1,0 +1,3324 @@
+/*
+Author: Kenny Tan Chee Lun
+Created: 1 April 2020
+Last modified: 19 April 2020
+Description: Assignment 1
+*/
+
+/*General style*/
+@font-face {
+	font-family: SansRegular;
+	src: url(font/SansRegular.woff);
+}
+
+@font-face {
+	font-family: SansBold;
+	src: url(font/SansBold.ttf);
+}
+
+@font-face {
+	font-family: ArialRounded;
+	src: url(font/ArialRoundedMTBold.ttf);
+}
+
+@font-face {
+	font-family: NumberFont;
+	src: url(font/Number.ttf);
+}
+
+@font-face {
+	font-family: QueFont;
+	src: url(font/QuestionMarkFont.ttf);
+}
+
+@font-face{
+    font-family: NumF;
+    src: url(font/NumFont.ttf);
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: SansRegular, arial, sans-serif;
+}
+
+* button:focus{
+	outline: none;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+article{ 
+	clear: both;
+	margin-top: 70px;
+}
+
+h2{
+	font-size: 35px;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+/*End of general style*/
+
+/*Enquiry process and Admin page style*/
+div#adminMenuButtons{
+	width: 600px;
+	margin: 40px auto;
+	border: 5px solid rgb(85, 85, 85);
+	border-radius: 25px;
+	background-color: rgb(199, 199, 199);
+	text-align: center;
+}
+
+div#adminMenuButtons h2{
+	font-size: 40px;
+	margin: 50px 0;
+	text-decoration: underline;
+}
+
+form#mainMenuBtnFormSub{
+	text-align: center;
+	margin-top: 30px;
+}
+
+body.admin input{
+	cursor: pointer;
+	font-size: 30px;
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: rgb(71, 219, 233);
+	border: 3px solid rgb(43, 196, 243);
+}
+
+body.admin input:hover,
+body.enqProcess input.backhome:hover{
+	transition: 0.6s ease;
+	border-color: rgb(0, 0, 202);
+}
+
+div#adminMenuButtons input{
+	margin-bottom: 55px;
+}
+
+body.admin table,
+body.enqProcess table,
+body.viewEnq table {
+	clear: both;
+	margin: 50px auto;
+	font-size: 20px;
+}
+
+body.viewEnq table {
+	margin: 100px auto 50px auto;
+}
+
+body.admin table th,
+body.admin table td,
+body.enqProcess table th,
+body.enqProcess table td,
+body.viewEnq table th,
+body.viewEnq table td {
+	border: 5px solid grey ;
+	padding: 10px 20px;
+}
+
+body.enqProcess table,
+body.enqProcess .backhomeContainer{
+	width: 800px;
+	margin: 0 auto;
+}
+
+body.viewEnq table{
+	width: 90%;
+}
+
+body.enqProcess .backhomeContainer{
+	text-align: right;
+}
+
+body.enqProcess table th:last-child,
+body.enqProcess table td:last-child{
+	width: 70%;
+}
+
+body.enqProcess input.backhome{
+	cursor: pointer;
+	font-size: 20px;
+	margin: 30px 0;
+	padding: 8px 15px;
+	background-color: rgb(71,219,233);
+	border: 3px solid rgb(43,196,243);
+	border-radius:30px;
+}
+
+body.admin input.dltUser{
+	font-size: 18px;
+}
+
+body.admin table th,
+body.enqProcess table th,
+body.viewEnq table th{
+	background-color: rgb(14, 199, 245);
+	font-size: 1.2em;
+}
+
+body.enqProcess div.headtitle{
+	clear: both;
+	text-align:center;
+	margin: 100px auto 50px auto;
+	border: 15px double rgb(43,196,243); 
+	font-size: 20px;
+	border-radius: 50px;
+	color:black;
+	background:rgb(71, 219, 233);
+	padding: 10px 20px;
+	width: 800px;
+}
+
+body.admin table td,
+body.enqProcess table td,
+body.viewEnq table td {
+	background-color: rgb(231, 231, 231);
+}
+
+body.admin table.feedbackRatingTable td,
+body.admin table.quantityProduct td:nth-child(2){
+	text-align: center;
+}
+
+body.admin table.feedbackCommentTable td.commentCell{
+	width: 400px;
+}
+
+body.admin table .firstHead,
+body.viewEnq table .firstHead{
+	font-size: 28px;
+	background-color: rgb(109, 109, 109);
+	color: white;
+}
+
+footer.adminFooter{
+	padding: 0;
+}
+
+footer.adminFooter div.copyright{
+	margin-top: 0;
+}
+
+/*End of Enquiry process and admin page style*/
+
+
+
+
+/*Top bar style*/
+header#head{
+	width: 100%;
+	background-color: rgb(247, 247, 247);
+	box-shadow: 0 1px 5px rgb(133, 133, 133);
+}
+
+div.topcontent{
+	position: relative;
+	width: 85%;
+	min-width: 540px;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.topcontent img.mainlogo{
+	height: 95px;
+	position: relative;
+	left: 50%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: -79px;
+}
+
+div.topcontent div.member, 
+div.topcontent div.login{
+	cursor: pointer;
+	height: 45px;
+	background-color: rgb(71, 219, 233);
+	color: black;
+	position: absolute;
+	top: 10px;
+	border: 3px solid rgb(43, 196, 243);
+	border-radius: 30px;
+	padding: 0 15px;
+	z-index: 2;
+}
+
+div.topcontent div.hiddenSignUp{
+	display: none;
+}
+
+div.topcontent div.login{
+	min-width: 98px;
+	float: right;
+}
+
+div.topcontent div.login{
+	position: relative;
+	cursor: pointer;
+	text-align: right;
+	min-width: 10px;
+	right: 0;
+	z-index: 1;
+}
+
+div.topcontent div.member:hover ,
+div.topcontent div.login:hover,
+div.topcontent div.cart img:hover,
+div.topcontent div.fixcart img:hover{
+	transition: 0.6s ease;
+	border-color: rgb(0, 0, 202);
+}
+
+div.member p, 
+div.login p{
+	display: inline;
+}
+
+div.member p.image{
+	position: relative;
+	right: 2px;
+	top: 2px;
+}
+
+div.login p.image{
+	position: relative;
+	right: 4px;
+	top: 0;
+}
+
+div.member p.txt{
+	position: relative;
+	left: 2px;
+	bottom: 17px;
+}
+
+div.login p.txt{
+	position: relative;
+	bottom: 17px;
+}
+
+div.member img,
+div.login img{
+	height: 45px;
+}
+
+div.topcontent div.cartContain{
+	position: absolute;
+	top: 0;
+	right: 8px;
+}
+
+div.topcontent div.cart{
+	z-index: 2;
+}
+
+div.topcontent div.fixcartContain{
+	z-index: 3;
+	position: fixed;
+	display: none;
+	top: -50px;
+	right: 30px;
+}
+
+div.topcontent div.cart,
+div.topcontent div.fixcart{
+	cursor: pointer;
+	border-radius: 50%;
+	position: relative;
+	top: 68px;
+}
+
+div.topcontent div.cart{
+	width: 45px;
+}
+
+div.topcontent div.fixcart{
+	width: 70px;
+}
+
+div.topcontent div.cart img,
+div.topcontent div.fixcart img{
+	border-radius: 50%;
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 219, 233);
+	width: 100%;
+}
+
+div.topcontent div.messageBox,
+div.topcontent div.confirmDeleteBox{
+	display: none;
+	color: white;
+	border: 10px double rgb(206, 206, 206);
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	text-align: center;
+	top: 20px;
+	left: 0;
+	right: 0;
+	width: 450px;
+	padding: 30px 10px;
+	margin: 0 auto;
+	z-index: 100;
+	font-size: 22px;
+}
+
+div.topcontent div.messageBox img{
+	position: absolute;
+	right: 5px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 50px;
+}
+
+div.topcontent div.messageBox p,
+div.topcontent div.confirmDeleteBox p{
+	width: 100%;
+	text-align: center;
+	float: left;
+	line-height: 1.5;
+}
+
+div.topcontent div.confirmDeleteBox button#yesBtn,
+div.topcontent div.confirmDeleteBox button#noBtn{
+	cursor: pointer;
+	border-radius: 30px;
+	font-size: 22px;
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 219, 233);
+	margin-top: 30px;
+	padding: 8px 20px;
+}
+
+div.topcontent div.confirmDeleteBox button#yesBtn:hover,
+div.topcontent div.confirmDeleteBox button#noBtn:hover{
+	transition: all 0.8s;
+	border-color: rgb(0, 0, 202);
+}
+
+div.topcontent div.confirmDeleteBox button#yesBtn{
+	float: left;
+	margin-left: 30%;
+}
+
+div.topcontent div.confirmDeleteBox button#noBtn{
+	float: right;
+	margin-right: 30%;
+}
+
+
+/*Pop up add to cart box*/
+/*This information is reference and paraphrased from https://www.w3schools.com/howto/howto_css_modals.asp */
+div.popupCart{
+	overflow: auto;
+	display: none; 
+	position: fixed; 
+	z-index: 4; 
+	padding-top: 4vh;	 
+	left: 0;
+	top: 0;
+	width: 100vw; 
+	height: 100vh; 
+	overflow-x: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.3); 
+}
+
+div.popupCart div.popupCartContent{
+	transform: scale(0);
+	background-color: rgb(206, 206, 206);
+	margin: auto;
+	padding: 20px;
+	box-shadow: 0 0 30px rgb(97, 97, 97);
+	border-radius: 30px;
+	width: 90vw;
+	min-width: 400px;
+	max-width: 1300px;
+	height: 85vh;
+}
+
+div.popupCart div.headCart{
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+div.popupCart p.close {
+	text-align: center;
+	float: left;
+	width: 35px;
+	height: 35px;
+	color: black;
+	font-size: 35px;
+	font-weight: bold;
+}
+  
+div.popupCart p.close:hover{
+	color: rgb(236, 236, 236);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+div.popupCart p.dltCart{
+	cursor: pointer;
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 219, 233);
+	float: right;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+div.popupCart p.dltCart:hover,
+div.popupCartContent input.payNow:hover{
+	transition: 0.6s ease;
+	border-color: rgb(0, 0, 202);
+}
+
+div.popupCart p.dltCart img{
+	width: 100%;
+}
+
+div#cartProductList{
+	background-color: white;
+	border-radius: 40px 40px 0 0;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	height: 75%;
+	margin: 10px auto;
+	overflow-x: scroll;
+}
+
+div#cartProductList *{	
+	cursor: context-menu;
+}
+
+div#cartProductList *::selection{
+	background: transparent;
+}
+
+div#cartProductList div.containerCart{
+	position: absolute;
+	bottom: 10px;
+	height: min-content;
+}
+
+div#cartProductList figure.cartImg{
+	display: flex;
+}
+
+div#cartProductList figure.cartImg p{
+	position: relative;
+	border-right: 4px solid transparent;
+	width: 250px;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+div#cartProductList figure.cartImg p img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+div#cartProductList figure.cartImg img{
+	width: 90%;
+}
+
+div#cartProductList div.tickbox span.cartItemClicked{
+	background-color: rgb(0, 0, 202) !important;
+}
+
+div#cartProductList span.marking{
+	display: inline-block;
+	height: 17px;
+	width: 17px;
+	border: 8px solid rgb(43, 196, 243);
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+div#cartProductList div.proName p,
+div#cartProductList div.proPrice p,
+div#cartProductList div.tickbox p.containMarking,
+div#cartProductList div.proQuantity p{
+	box-sizing: border-box;
+	border-right: 4px solid rgb(93, 93, 93);
+	display: inline-block;
+	width: 250px;
+	text-align: center;
+}
+
+div#cartProductList div.proName p:last-child,
+div#cartProductList div.proPrice p:last-child,
+div#cartProductList div.tickbox p.containMarking:last-child,
+div#cartProductList div.proQuantity p:last-child{
+	border-right: 4px solid transparent;
+}
+
+div#cartProductList div.proName p{
+	padding-top: 10px;
+	font-size: 23px;
+}
+
+div#cartProductList div.proPrice p{
+	padding-bottom: 6px;
+	font-size: 20px;
+}
+
+div.popupCartContent input.payNow{
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 219, 233);
+	border-radius: 30px;
+	padding: 10px 20px;
+	float: right;
+	font-size: 25px;
+}
+
+div.popupCartContent div.total{
+	float: left;
+	width: 50%;
+	min-width: 450px;
+	font-size: 35px;
+}
+
+div.popupCartContent span.totalAns{
+	font-size: 60px;
+}
+
+div.popupCartContent div.proQuantity p{
+	font-size: 30px;
+}
+
+div.popupCartContent div.proQuantity span.numItem{
+	display: inline-block;
+	width: 50px;
+}
+
+div.popupCartContent div.proQuantity span.leftArrow,
+div.popupCartContent div.proQuantity span.rightArrow{
+	position: relative;
+	bottom: -9px;
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-top: 18px solid transparent;
+	border-bottom: 18px solid transparent;
+}
+
+div.popupCartContent div.proQuantity span.leftArrow{
+	border-right: 18px solid rgb(46, 187, 230);
+}
+/*rgb(5, 213, 250)*/
+div.popupCartContent div.proQuantity span.rightArrow{
+	border-left: 18px solid rgb(46, 187, 230);
+}
+
+div.popupCartContent div.proQuantity span.leftArrow:hover{
+	border-right: 18px solid rgb(5, 213, 250);
+}
+
+div.popupCartContent div.proQuantity span.rightArrow:hover{
+	border-left: 18px solid rgb(5, 213, 250);
+}
+
+/*End of pop up add to cart box*/
+/*End of top bar style*/
+
+
+/*Nav bar style*/
+nav{
+	width: 100%;
+	float: left;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+nav div.nav1{
+	width: 85%;
+	min-width: 510px;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav ul{
+	height: 60px;
+	list-style-type: none;
+	display: inline-block;
+}
+
+nav ul li{
+	display: inline-flex;
+	margin: auto 10px;
+	padding-bottom: 2px;
+}
+
+nav ul#top_left_bar,
+nav ul#top_right_bar{
+	padding-top: 23px;
+	border-color: rgb(219, 219, 219);
+	border-width: 3px;
+	border-style: none none ridge none;
+	box-shadow:0 12px 6px -6px rgba(155, 155, 155, 0.5);
+	height: 43px;
+}
+
+nav ul#top_left_bar{
+	float: left;
+	width: max-content;
+}
+
+nav ul#top_right_bar{
+	float: right;
+}
+
+nav ul li a{
+	position: relative;
+	color: rgb(49, 49, 49);
+	text-decoration: none;
+	padding-bottom: 24px;
+	padding-top: 0;
+	font-family: SansBold, Arial, sans-serif;
+	font-size: 18px;
+	z-index: 2;
+}
+
+nav span.navline{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0;
+	height: 4px;
+	display: inline-block;
+	background-color: rgb(18, 110, 231);
+}
+
+nav span.triangle{
+	font-size: 21px;
+	color: rgb(0, 0, 202);
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 20px;
+	display: none;
+}
+
+nav li:hover span.navline{
+	transition: 0.6s;
+	width: 100% !important;
+}
+
+nav ul li:hover>a{
+	cursor: pointer;
+	transition: color 0.5s ease;
+	color: rgb(17, 58, 195);
+}
+
+nav ul li.activeline a{
+	color: rgb(6, 6, 179);
+}
+
+nav ul li a span.activeline{
+	background-color: rgb(0, 0, 202) !important;
+	width: 100% !important;
+}
+/*End of nav bar style*/
+
+
+/*Sub nav bar & Product page header style*/
+nav div#subWin{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+}
+
+header#productBanner p.filter{
+	font-size: 18px;
+	padding-top: 10px;
+}
+
+nav span.sub,
+header#productBanner span.sub{
+	clear: both;
+	display: none;
+	position: absolute;
+	background-color: rgb(236, 236, 236);
+	box-shadow: 0 4px 8px grey;
+	width: 100%;
+	margin-top: 47px;
+	left: 0;
+	text-align: center;
+	z-index: 1;
+}
+
+nav span.sub img,
+header#productBanner img{
+	transition: all 0.3s ease;
+	margin: 0;
+	height: 140px;
+	margin: 15px 20px 12px 20px;
+	border: 5px solid rgb(72, 196, 245);
+	border-radius: 50%;
+}
+
+nav span.sub img:hover,
+header#productBanner img:hover{
+	transition: border 0.3s linear;
+	border-left: 5px dashed rgb(72, 196, 245) !important;
+	border-right: 5px dashed rgb(72, 196, 245) !important;
+	border-top: 5px solid rgb(72, 196, 245) !important;
+	border-bottom: 5px solid rgb(15, 55, 233) !important;
+}
+/*
+header#productBanner img.activeBannerImg{
+	
+}
+*/
+header#productBanner img.activeBannerImg:hover{
+	border-left: 5px solid rgb(15, 55, 233) !important;
+	border-right: 5px solid rgb(15, 55, 233) !important;
+	border-top: 5px solid rgb(15, 55, 233) !important;
+	border-bottom: 5px dashed rgb(72, 196, 245) !important;
+}
+
+nav span.subcontainer,
+header#productBanner span.subcontainer{
+	display: block;
+}
+
+nav button.subHead,
+header#productBanner button.subHead{
+	cursor: pointer;
+	height: auto;
+	font-size: 20px;
+	font-family: SansBold, Arial, sans-serif;
+	letter-spacing: 0.5px;
+	margin: 10px auto 0 auto;
+	padding: 5px 15px;
+	border: 3px solid rgb(43, 196, 243);
+	border-radius: 20px;
+	background-color: rgb(71, 228, 233);
+}
+
+nav img,
+header#productBanner img.normalBanner{
+	cursor: pointer;
+}
+
+
+nav button.subHead:hover,
+header#productBanner button.subHead:hover{
+	transition: all 0.6s ease-in;
+	color: rgb(53, 53, 53);
+	border: 3px solid rgb(0, 0, 202);
+}
+/*End of sub nav bar style*/
+
+
+/*Footer style*/
+footer{
+	clear: both;
+	padding-top: 50px;
+	background-color: rgb(226, 226, 226);
+}
+
+footer div.container{
+	width: 88%;
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 7%;
+}
+
+footer span.arrow_up{
+	border: solid black;
+  	border-width: 0 3px 3px 0;
+  	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	vertical-align: middle;	 
+	margin-left: 8px; 
+	margin-top: 1px;
+}
+
+footer div.backtop{
+	display: none;
+}
+
+footer div.backtop,
+footer div#calculatorBtn{
+	z-index: 2;
+	text-align: left;
+	position: fixed;
+	bottom: 30px;
+	border-radius: 50%;
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 219, 233);
+}
+
+footer div.backtop{
+	right: 30px;
+	padding: 20px;
+}
+
+footer div.backtop:hover,
+footer div#calculatorBtn:hover{
+	transition: 0.6s ease;
+	border-color: rgb(0, 0, 202);
+}
+
+footer div.backtop p{
+	position: relative;
+	right: 3.5px;
+}
+
+footer div#calculatorBtn{
+	width: 50px;
+	height: 50px;
+	left: 30px;
+	padding: 10px;
+}
+
+footer div#calculatorBtn img{
+	width: 100%;
+}
+
+footer div.ask,
+footer div.product,
+footer div.info{
+	float: left;
+
+}
+
+footer div.ask{
+	clear: both;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-right: 9%;
+}
+
+footer div.ask p.caption{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+
+footer div.ask img.asklogo{
+	height: 150px;
+	position: relative;
+	right: 45px;
+}
+
+footer div.ask img.whatsapplogo{
+	height: 68px;
+} 
+
+footer div.ask img.emaillogo{
+	height: 64px;
+}
+
+footer div.phonenum{
+	height: 0;
+	position: relative;
+	bottom: 62px;
+	left: 73px;
+}
+
+footer div.email{
+	height: 0;
+	position: relative;
+	bottom: 53px;
+	left: 73px;
+}
+
+footer div.phonenum p,
+footer div.email p,
+footer div.email p a{
+	font-family: ArialRounded, Arial, sans-serif;
+}
+
+footer div.phonenum p.num{
+	font-size: 25px;
+}
+
+footer div.email p.email{
+	font-size: 18px;
+}
+
+footer div.phonenum p.numday,
+footer div.email p.emailday{
+	font-size: 15px;
+}
+
+footer a{
+	color: black;
+	text-decoration: none;
+}
+
+footer a:hover{
+	color: rgb(0, 0, 202);
+	text-decoration: underline;
+}
+
+footer ul{
+	list-style-type: none;
+}
+
+footer h1{
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+footer div.product,
+footer div.info{
+	margin-bottom: 30px;
+	margin-right: 8%;
+}
+
+footer div.product li,
+footer div.info li{
+	margin-top: 9px;
+}
+
+footer div.stay_payment{
+	float: left;
+}
+
+footer div.stay{
+	margin-bottom: 20px;
+}
+
+footer div.stay ul.socialmedia li{
+	height: 80px;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+	margin-right: 4px;	
+}
+
+footer div.stay a:hover{
+	opacity: 0.8;
+}
+
+footer div.stay img{
+	height: 80px;
+}
+
+footer div.payment img{
+	height: 120px;
+}
+
+footer div.stay_payment{
+	margin-bottom: 30px;
+}
+
+footer div.copyright{
+	clear: both;
+	margin-top: 100px;
+	width: 100%;
+}
+
+footer div.copyright p{
+	padding: 15px 0;
+	text-align: center;
+}
+/*End of footer style*/
+
+
+/*Home page style*/
+body.home{
+	background-image: url(images/homebackground.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body.home nav{
+	margin-bottom: 30px;
+}
+
+article.home h2{
+	text-align: center;
+	padding: 30px 0;
+	width: 28vw;
+	min-width: 450px;
+	border-radius: 50px;
+	border-left: 50px solid rgba(0, 0, 0, 0.5);
+	border-right: 50px solid rgba(0, 0, 0, 0.5);
+	border-top: 5px dashed rgba(0, 0, 0, 0.5);
+	border-bottom: 5px dashed rgba(0, 0, 0, 0.5);
+	margin: 15px auto 0 auto;
+}
+
+/*Member's benefits style*/
+div.memberbenefits{
+	width: 100%;
+}
+
+div.memberbenefits div{
+	width: 40%;
+	min-width: 500px;
+	margin: 20px auto;
+	padding: 0 35px;
+}
+
+div.memberbenefits div>ul{
+	position: relative;
+	width: 98%;
+	max-width: 520px;
+	font-size: 25px;
+	margin: 20px auto;
+	padding-top: 8px;
+	list-style-type: none;
+}
+
+div.memberbenefits div>ul>li::before{
+	content: '';
+	background: url(images/fire.png);
+	background-repeat: no-repeat;
+  	position: absolute;
+	left: -40px; 
+	top: 0;
+  	width: 1.8em;
+  	height: 1.8em;
+	
+}
+
+div.memberbenefits ul ul{
+	list-style-position: inside;
+	margin-top: 10px;
+	font-size: 20px;
+	width: 110%;
+}
+
+div.memberbenefits ul ul li{
+	list-style-type: none;
+	padding-top: 5px;
+	position: relative;
+	padding-left: 35px;
+	height: 1.7em;
+}
+
+div.memberbenefits ul ul li::before{
+	content: '';
+  	position: absolute;
+	left: 0; 
+	top: 0;
+  	width: 1.5em;
+  	height: 1.5em;
+	background: url(images/tick.png);
+}
+
+div.memberbenefits figure{
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+div.memberbenefits figure p{
+	cursor: pointer;
+	transform: scale(0.7);
+	font-size: 50px;
+	color: rgb(31, 31, 31);
+	background-image: linear-gradient(to top, rgba(28, 65, 230, 0.6), rgba(0, 174, 255, 0.6));
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 300px;
+	height: 60px;
+	padding: 15px 40px;
+	border-radius: 70px;
+	border: 5px solid rgb(20, 112, 233);
+}
+
+div.memberbenefits figure p:hover{
+	transition: all 0.2s linear;
+	color: rgb(58, 58, 58);
+	background-image: linear-gradient(to bottom, rgba(28, 65, 230, 0.6), rgba(0, 174, 255, 0.6));
+}
+
+div.memberbenefits img{
+	width: 100%;
+}
+/*End of member's benefits style*/
+
+
+/*Essentials style*/
+div.essentials{
+	border: 1px solid transparent;
+	text-align: center;
+}
+
+div.essentials_img{
+	width: 100%;
+	min-width: 150px;
+	max-width: 1300px;
+	margin: 10px auto 80px auto;
+	text-align: center;
+}
+
+div.essentialsub{
+	width: 540px;
+	display: inline-block;
+}
+
+div.essentials figure{
+	position: relative;
+	display: inline-block;
+	width: 22%;
+	min-width: 250px;
+	border-radius: 30px;
+	border: 3px solid gray;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding-bottom: 20px;
+	text-align: center;
+	margin: 2% 1%;
+}
+
+div.essentials figure:hover img{
+	transition: all 0.3s ease-in;
+	transform: scale(1.25);
+}
+
+div.essentials figure img{
+	transition: all 1.5s linear;
+	width: 75%;
+	margin: 0 auto;
+}
+
+div.essentials figure figcaption{
+	font-size: 25px;
+	text-shadow: 1px 1px 5px gray;
+}
+
+div.essentials span.ess_discription{
+	font-size: 20px;
+	padding-top: 5px;
+	display: block;
+}
+/*End of essentials styles*/
+
+
+/*Shop by category styles*/
+div.category{
+	text-align: center;
+	width: 100%;
+}
+
+div.category h2{
+	margin-bottom: 20px;
+}
+
+div.category div.odd,
+div.category div.even{
+	position: relative;
+	width: 100%;
+	float: left;
+}
+
+div.category div.odd{
+	background-color: rgba(219, 219, 219, 0.9);
+}
+
+div.category div.even{
+	color: white;
+	background-color: rgba(65, 65, 65, 0.9);
+}
+
+div.category div.container{
+	width: 90%;
+	max-width: 1450px;
+	min-width: 420px;
+	padding: 0 2%;
+	margin: 40px auto;
+}
+
+div.category div p.main{
+	font-size: 30px;
+	color: white;
+	width: min-content;
+	background-color: rgb(161, 19, 204);
+	padding: 10px 25px;
+	margin-bottom: 15px;
+	border-radius: 30px;
+}
+
+div.category p.main~p{
+	font-size: 22px;
+	text-align: justify;
+	line-height: 1.5;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 20px;
+}
+
+div.category div.odd div.pcontent{
+	float: left;
+}
+
+div.category div.even div.pcontent{
+	float: right;
+}
+
+div.pcontent{
+	width: 49%;
+	min-width: 400px;
+	display: inline-block;
+}
+
+div.pcontent p:last-child::first-letter{
+	font-family: verdana, sans-serif;
+	font-weight: lighter;
+	font-size: 35px;
+}
+
+div.category figure{
+	display: inline-block;
+	position: relative;
+	width: 49%;
+	min-width: 400px;
+	margin-bottom: 40px;
+}
+
+div.category div.odd figure{
+	float: left;
+	margin-left: 1%;
+}
+
+div.category div.even figure{
+	float: right;
+	margin-right: 1%;
+}
+
+div.category figure p{
+	cursor: pointer;
+	transform: scale(0.7);
+	font-size: 50px;
+	color: white;
+	background-color: rgba(54, 54, 54, 0.6);
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 250px;
+	height: 60px;
+	padding: 15px 40px;
+	border-radius: 70px;
+	border: 3px solid rgb(0, 217, 255);
+}
+
+div.category figure a:hover p{
+	transition: all 0.5s ease;
+	color: black;
+	background-color: rgba(6, 218, 255, 0.6);
+}
+
+div.category div img{
+	width: 100%;
+}
+/*End of Shop by category styles*/
+
+
+/*YouTube video style*/
+div.youtubevideo{
+	float: left;
+	width: 100%;
+	margin: 40px 0;
+}
+
+div.youtubevideo div.description{
+	font-size: 20px;
+	width: 40%;
+	min-width: 400px;
+	max-width: 600px;
+	margin: 20px auto 40px auto;
+	line-height: 1.3;
+}
+
+div.youtubevideo div.description div{
+	width: 100%;
+	margin-top: 10px;
+	text-align: right;
+}
+
+div.youtubevideo div.scroll{
+	overflow: auto;
+	white-space: nowrap;
+	border-top: 5px dotted rgb(65, 65, 65);
+}
+
+div.youtubevideo div.scroll div{
+	display: inline-block;
+	width: 60vw;
+	height: 33vw;
+	margin: 0 3%;
+}
+
+div.youtubevideo div.scroll p{
+	font-size: 30px;
+	width: min-content;
+	background-color: rgb(11, 227, 255);
+	border: 8px solid rgb(141, 11, 180);
+	border-bottom: none;
+	padding: 12px 27px 8px 27px;
+	margin: 30px auto 0 auto;
+	border-radius: 25px 25px 0 0;
+}
+
+div.youtubevideo iframe{
+	width: 100%;
+	height: 100%;
+}
+/*End of YouTube video style*/
+/*End of home page style*/
+
+
+/*Product page style*/
+nav ul li.active a{
+	color: rgb(6, 6, 179);
+}
+
+article.products{
+	border: 1px solid transparent;
+	background-image: url(images/productbackground.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+article.products header#productBanner{
+	width: 100%;
+	background-color: rgb(236, 236, 236);
+	box-shadow: 0 4px 5px rgb(189, 189, 189);
+	text-align: center;
+}
+
+article.products p.notes{
+	font-size: 18px;
+	margin: 30px 0 50px;
+	text-align: center;
+	line-height: 1.3;
+}
+
+article.products h2.brands{
+	display: flex;
+	position: relative;
+	width: 100%;
+	align-items: center;
+	margin-top: 30px;
+}
+
+article.products h2.brands img{
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 15%;
+	max-width: 200px;
+	min-width: 180px;
+	border-bottom: 5px solid rgb(71, 41, 241);
+	border-top: 5px solid rgb(71, 41, 241);
+	box-shadow: 0 12px 6px -6px rgb(158, 158, 158);
+	border-radius: 20%;
+}
+
+article.products span.leftline,
+article.products span.rightline{
+	height: 16px;
+	width: 40%;
+	box-shadow: 0 0 4px grey;
+}
+
+article.products span.leftline{
+	margin: auto auto auto 1%;
+	border-radius: 0 100%;
+	background: linear-gradient(to left, rgb(110, 231, 231) 0%, rgb(72, 180, 252) 40%, rgb(147, 16, 187) 100%);
+}
+
+article.products span.rightline{
+	margin: auto 1% auto auto;
+	border-radius: 100% 0;
+	background: linear-gradient(to right, rgb(110, 231, 231) 0%, rgb(72, 180, 252) 40%, rgb(147, 16, 187) 100%);
+}
+
+/*Product image style*/
+div.pro_image_container{
+	position: relative;
+	width: 88%;
+	margin: 0 auto;
+	text-align: left;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 10.5vh;
+}
+
+div.pro_image_container div.figcontainer{
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	min-width: 270px;
+	margin: 3vh 4% 55px auto;
+	height: 25vw;
+	min-height: 380px;
+	max-height: 450px;
+	background-image: linear-gradient(to bottom, rgb(110, 231, 231) 0%, rgb(72, 180, 252) 15%, rgb(147, 16, 187) 80%);
+	box-shadow: 0 -5px 10px rgb(155, 155, 155, 0.8);
+	border-radius: 25px;
+	text-align: center;
+	z-index: 1;
+}
+
+figure.pro_image{
+	display: flex;
+	position: relative;
+	width: 80%;
+	height: 92%;
+	top: 8%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	align-items: flex-start;
+	text-align: center;
+	background-color: white;
+	border-radius: 20px 20px 0 0;
+}
+
+figure.pro_image img{
+	transition: all 0.8s linear;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 100px;
+	margin: 0 auto;
+	width: 88%;
+}
+
+div.figcontainer div.figpara{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 0 10px 0;
+	border-radius: 0 0 20px 20px;
+	background-color: rgb(231, 231, 231);
+	
+}
+
+div.figcontainer p{
+	margin: 0 auto;
+}
+
+div.figcontainer p.name{
+	border-bottom: 2px double black;
+	font-size: 22px;
+	padding: 10px 15px 2px 15px;
+	border-radius: 10px;
+	width: 95%;
+	max-width: 220px;
+}
+
+div.figcontainer p.price{
+	font-family: NumberFont, Arial, sans-serif;
+	color: white;
+	background-color: rgb(131, 131, 131);
+	padding: 5px 13px;
+	margin-top: 3px;
+	border-radius: 20px;
+	font-size: 22px;
+	width: 120px;
+} 
+
+div.figcontainer:hover figure img{
+	transition: all 0.3s linear;
+	width: 95%;
+}
+
+/*Enquiry and Add to Cart button*/
+div.figcontainer p.enq,
+div.figcontainer button.addCart{
+	cursor: pointer;
+	position: absolute;
+	color: black;
+	border: 3px solid rgb(43, 196, 243);
+	background-color: rgb(71, 228, 233);
+	margin-top: 15px;
+}
+
+div.figcontainer p.enq{
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	padding: 5px;
+	font-family: Quefont, Arial, sans-serif;
+	font-size: 40px;
+	border-radius: 50%;
+}
+
+div.figcontainer button.addCart{
+	font-size: 19px;
+	padding: 10px 18px;
+	border-radius: 30px;
+	right: 0;
+}
+
+div.figcontainer p.enq:hover,
+div.figcontainer button.addCart:hover{
+	transition: 0.6s ease-in-out;
+	border-color: rgb(0, 0, 202);
+}
+
+/*End of enquiry and Add to Cart button*/
+/*End of product image style*/
+
+
+/*Product general detail style*/
+div.productdetails{
+	color: white;
+	background-color: rgba(24, 24, 24, 0.5);
+	width: 100%;
+	padding: 30px 0;
+	margin-top: 30px;
+}
+
+div.productdetails div{
+	font-size: 23px;
+	width: 80%;
+	min-width: 700px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+div.productdetails h2{
+	text-align: center;
+	padding: 20px 0;
+}
+
+div.productdetails>div>table{
+	width: 95%;
+	max-width: 800px;
+	margin: 0 auto;
+	border: 10px double rgb(214, 214, 214);
+}
+
+div.productdetails table th,
+div.productdetails table td{
+	border-left: 5px solid silver;
+	z-index: -1;
+	padding: 15px;
+}
+
+div.productdetails table th{
+	z-index: -1;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.productdetails table table{
+	border: 6px solid transparent;
+	width: 100%;
+}
+
+div.productdetails table table td{
+	border-bottom: 5px solid silver;
+}
+
+div.productdetails table table td:last-child{
+	text-align: center;
+}
+
+div.productdetails ul{
+	margin-left: 25px;
+	text-align: center;
+}
+/*End of product general detail style*/
+
+/*End of product page style*/
+
+
+/*Enquiry & Member registration style*/
+div#signupWindow{
+	display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;	
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 3;
+}
+
+form.signUp{
+	position: absolute;
+	top: 0;
+	left: -200%;
+	right: 0;
+	margin: 0 auto;
+	z-index: 3;
+	padding-bottom: 300px;
+}
+
+form.signUp,
+form.enquiry,
+form#confirmForm{
+	clear: both;
+	font-size: 20px;
+	margin-top: 300px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+form.enquiry fieldset,
+fieldset#signUpContainer,
+fieldset#loginContainer,
+form#confirmForm fieldset{
+	position: relative;
+	text-align: left;
+	font-size: 25px;
+	box-shadow: 0 0 12px rgb(202, 202, 202);
+	border-radius: 40px;
+	border: 5px solid rgb(243, 243, 243);
+	width: 95%;
+	min-width: 400px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+form.signUp fieldset,
+form.signUp table input,
+form.signUp table textarea,
+form.signUp table select,
+
+form.enquiry fieldset,
+form.enquiry table input,
+form.enquiry table textarea,
+form.enquiry table select,
+
+form#confirmForm fieldset{	
+	background-color: rgb(226, 226, 226);
+}
+
+form.signUp fieldset legend,
+form.enquiry fieldset legend.enquiry,
+fieldset#loginContainer legend,
+form#confirmForm fieldset legend{
+	position: relative;
+	margin: 0 auto;
+	border: 15px double rgb(43, 130, 243);
+	font-size: 35px;
+	border-radius: 50px;
+	color: black;
+	background: rgb(71, 219, 233);
+	padding: 10px 20px;
+}
+
+form.enquiry fieldset.address{
+	border: 4px solid rgb(194, 194, 194);
+	border-radius: 10px;
+	width: 97%;
+}
+
+form.enquiry fieldset.address legend{
+	text-align: left;
+	margin-left: 2%;
+	border: 4px solid rgb(194, 194, 194);
+	border-radius: 10px;
+	background-color: rgb(226, 226, 226);
+	color: black;
+	padding: 10px 20px;
+}
+
+form.enquiry fieldset.address table{
+	width: 95%;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+form.signUp table td{
+	width: 50%;
+}
+
+form.signUp table table td,
+form.enquiry table table td{
+	width: 33.33%;
+}
+
+form.enquiry table tr:nth-child(3) td,
+form.signUp table tr:nth-child(3) td,
+form.signUp table tr:nth-child(5) td{
+	padding-top: 10px;
+}
+
+form.signUp table,
+form.enquiry table{
+	width: 90%;
+	text-align: left;
+	margin: 30px auto;
+}
+
+form.signUp table{
+	margin: 60px auto 0 auto;
+}
+
+form.signUp table input,
+form.signUp table textarea,
+form.signUp table select,
+
+form.enquiry table input,
+form.enquiry table textarea,
+form.enquiry table select{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+form.signUp table input:focus,
+form.signUp table textarea:focus,
+form.signUp table select:focus,
+
+form.enquiry table input:focus,
+form.enquiry table textarea:focus,
+form.enquiry table select:focus{
+	outline: none;
+}
+
+form.signUp table input:focus,
+form.enquiry table input:focus{
+	transition: 0.3s ease-in-out;
+	border-bottom: 4px solid rgb(43, 96, 243);
+}
+
+form.signUp table textarea:focus,
+form.signUp table select:focus,
+
+form.enquiry table textarea:focus,
+form.enquiry table select:focus{
+	transition: 0.3s ease-in-out;
+	border: 4px solid rgb(43, 96, 243);
+}
+
+form.signUp table input,
+form.enquiry table input{
+	width: 96%;
+	height: 30px;
+	border: none;
+	padding-top: 5px;
+	border-bottom: 4px solid black;
+}
+
+form.signUp table input.date,
+form.enquiry table input.date{
+	width: 50%;
+	min-width: 175px;
+}
+
+form.signUp table textarea,
+form.enquiry table textarea{
+	width: 97%;
+	margin-top: 5px;
+	resize: vertical;
+	line-height: 30px;
+	border: 4px solid black;
+	padding-left: 10px;
+}
+
+form.enquiry td.comments{
+	padding-top: 20px;
+}
+
+form.signUp table select{
+	padding: 7px 10px;
+	width: 60%;
+	min-width: 150px;
+	margin-top: 0;
+	border: 4px solid black;
+	border-radius: 30px;
+}
+
+form.enquiry table select{
+	padding: 7px 10px;
+	margin-top: 0;
+	border: 4px solid black;
+	border-radius: 30px;
+}
+
+form.signUp table table select,
+form.enquiry table table select{
+	width: 90%;
+}
+
+form.enquiry table select.product{
+	width: 25%;
+	min-width: 150px;
+	margin-bottom: 0;
+	margin-top: 30px;
+}
+
+form.signUp table span.formdot,
+form.enquiry table span.formdot{
+	color: rgb(255, 37, 37);
+}
+
+form.signUp table td.notes input,
+form.enquiry table td.notes input{
+	margin-bottom: 0;
+}
+
+form.signUp table td.notes p,
+form.enquiry table td.notes p{
+	margin-top: 7px;
+	font-size: 16px;
+	color: rgb(0, 37, 201);
+}
+
+form.enquiry #subject{
+	padding-top: 18px;
+}
+
+form.enquiry #product_type_selection,
+form.enquiry #product_brand_selection,
+form.enquiry #product_name_selection{
+	width: 35%;
+	margin-top: 17px;
+}
+
+form.signUp table td.notes p.hidden{
+	visibility: hidden;
+}
+
+form.signUp table table{
+	width: 100%;
+	margin: 0;
+}
+
+div.memberbutton,
+div.enquirybutton{
+	text-align: right;
+	min-width: 280px;
+	max-width: 800px;
+	margin: 5px 50px 0 auto;
+}
+
+div.enquirybutton{
+	margin: 5px auto 0 auto;
+}
+
+div.memberbutton input,
+div.enquirybutton input,
+form#feedbackForm #feedbackSubmitBox input,
+form#confirmForm input{
+	cursor: pointer;
+	font-size: 20px;
+	margin-top: 10px;
+	padding: 8px 15px;
+	background-color: rgb(71, 219, 233);
+	border: 3px solid rgb(43, 196, 243);
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px rgb(192, 192, 192);
+}
+
+div.memberbutton input,
+div.enquirybutton input{
+	margin-bottom: 30px;
+}
+
+div.memberbutton input:hover,
+div.enquirybutton input:hover,
+form#feedbackForm #feedbackSubmitBox input:hover,
+form#confirmForm input:hover{
+	transition: 0.6s ease-in-out;
+	border-color: rgb(0, 0, 202);
+}
+
+div.memberbutton input:focus,
+div.enquirybutton input:focus{
+	outline: none;
+}
+
+/*End of enquiry & member registration style*/
+
+/*Confirm page style*/
+form#confirmForm{
+	width: 85%;
+	max-width: 670px;
+}
+form#confirmForm fieldset{
+	width: 85%;
+	max-width: 550px;
+	min-width: 400px;
+}
+
+form#confirmForm fieldset{
+	padding: 5% 8%;
+}
+
+form#confirmForm fieldset table{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+form#confirmForm fieldset table,
+form#confirmForm fieldset td,
+form#confirmForm fieldset table table td{	
+	border: 3px solid rgb(98, 98, 98);
+}
+
+form#confirmForm fieldset table td {
+	width: 65.5%;
+	padding: 8px 15px;
+}
+
+form#confirmForm fieldset table td:first-child{
+	width: 30.5%;
+}
+
+form#confirmForm fieldset table td.secondRow{
+	width: 20%;
+}
+
+form#confirmForm input{
+	margin-bottom: 50px;
+}
+
+form#confirmForm div.buttonsContain{
+	float: right;
+}
+
+/*End of confirm page style*/
+
+/*Feedback pop up Style*/
+footer button#feedbackBtn{
+	cursor: pointer;
+	transition: all 0.5s ease;
+	font-size: 20px;
+	background-color: rgb(71, 219, 233);
+	border: 5px ridge rgb(43, 196, 243);
+	border-left: none;
+	border-radius: 0 20px 20px 0;
+	position: fixed;
+	left: -70px;
+	bottom: 200px;
+	padding: 15px 20px 15px 80px;
+	z-index: 5;
+}
+
+footer div#feedbackBtnContain:hover button#feedbackBtn{
+	transition: all 0.8s ease;
+	transform: rotate(-50deg);
+}
+
+footer div#feedbackBtnContain{
+	position: fixed;
+	left: 0;
+	bottom: 150px;
+	width: 120px;
+	height: 180px;
+}
+
+form#feedbackForm{
+	position: fixed;
+	bottom: 150px;
+	left: 100vw;
+	background-color: rgb(224, 224, 224);
+	border: 5px solid grey;
+	box-shadow: 0 0 25px rgba(119, 119, 119, 0.8);
+	border-radius: 30px;
+	width: 500px;
+	padding: 40px 20px 20px 20px;
+	z-index: 3;
+	
+}
+
+form#feedbackForm h1{
+	text-align: center;
+}
+
+form#feedbackForm p{
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+form#feedbackForm #closeFeedback{
+	cursor: pointer;
+	position: absolute;
+	font-size: 40px;
+	top: 5px;
+}
+
+form#feedbackForm #closeFeedback:hover{
+	color: rgb(189, 189, 189);
+}
+
+form#feedbackForm #ratingEmojiBox{
+	text-align: center;
+}
+
+form#feedbackForm img{	
+	transition: all 0.5s ease;
+	display: inline-block;
+	width: 70px;
+	margin: auto 10px;
+}
+
+form#feedbackForm img:hover{
+	transition: all 0.7s ease;
+	transform: scale(1.2) !important;
+}
+
+form#feedbackForm #feedbackComment{
+	border: 4px solid rgb(85, 85, 85);
+	resize: none;
+	padding: 5px;
+	width: 95%;
+	height: 100px;
+}
+
+form#feedbackForm #feedbackComment:focus{
+	outline: none;
+	transition: all 1s ease;
+	border: 4px solid rgb(43, 96, 243);
+}
+
+form#feedbackForm #feedbackSubmitBox{
+	float: right;
+}
+
+/*End of feedback pop up Style*/
+
+
+/**************************************************/
+
+
+/*
+Author: Lai Yee Fung
+Created: 10 April 2020
+*/
+/*Login page style*/
+div#loginWindow{
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vw;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 4; 
+}
+
+fieldset#loginContainer{
+	transform: scale(0.9);
+	position: relative;
+	background-color: rgb(230, 230, 230);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: -500%;
+	margin: 0 auto;
+	width: 600px;
+	text-align: center;
+	min-width: 400px;
+}
+
+fieldset#loginContainer div#closeLogIn,
+fieldset#signUpContainer div#closeSignUp{
+	cursor: pointer;
+	position: absolute;
+	left: 30px;
+	font-size: 45px;
+}
+
+fieldset#loginContainer div#closeLogIn:hover,
+fieldset#signUpContainer div#closeSignUp:hover{
+	color: rgb(131, 131, 131);
+}
+
+fieldset#loginContainer div.loginbox{
+	width: 80%;
+	margin: 10px auto 0 auto;
+}
+
+fieldset#loginContainer input[type="text"],
+fieldset#loginContainer input[type="password"]{
+	background-color: rgb(230, 230, 230);
+	font-size: 20px;
+	width: 90%;
+	border: none;
+	border-bottom: 4px solid rgb(37, 37, 37);
+	padding: 8px 10px 3px 8px;
+	outline: none;
+}
+
+fieldset#loginContainer input[type="text"]:focus,
+fieldset#loginContainer input[type="password"]:focus{
+	transition: 0.3s ease-in-out;
+	border-bottom: 4px solid rgb(43, 96, 243);
+}
+
+fieldset#loginContainer div.loginbox p:nth-child(1){
+	width: 70%;
+	margin: 5px auto 15px auto;
+}
+
+fieldset#loginContainer div.loginbox p:nth-child(2){
+	width: 70%;
+	margin: 5px auto;
+}
+
+fieldset#loginContainer div.loginbox p:nth-child(3){
+	font-size: 17px;
+	width: 70%;
+	color: rgb(0, 37, 201);
+	text-align: left;
+	margin: 0 auto 15px auto;
+}
+
+fieldset#loginContainer div.imgbox {
+	text-align: center;
+}
+  
+fieldset#loginContainer img.user {
+	width: 35%;
+	border-radius: 50%;
+}
+
+fieldset#loginContainer div.loginbox span#loginCheckBoxContainer{
+	cursor: pointer;
+	display: none;
+	font-size: 19px;
+	margin: 18px 0;
+	float: left;
+}
+
+fieldset#loginContainer #loginCheckBoxContainer:hover #loginCheckBox{
+	background-color: rgb(71, 219, 233);
+}
+
+/*background-color: rgb(0, 0, 202);*/
+fieldset#loginContainer div.loginbox input#loginSubmit{
+	float: right;
+}
+
+fieldset#loginContainer input#loginSubmit{
+	cursor: pointer;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding: 8px 15px;
+	background-color: rgb(71, 219, 233);
+	border: 3px solid rgb(43, 196, 243);
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px rgb(192, 192, 192);
+}
+
+fieldset#loginContainer input[type="submit"]:hover{
+	transition: 0.6s ease-in-out;
+	border-color: rgb(0, 0, 202);
+}
+
+/*End of login page style*/
+
+
+/*Enhancement page style*/
+article.enhance,
+article.enhance3{
+	line-height: 1.5;
+	padding-top: 30px;
+	margin: 40px auto;
+	width: 95%;
+    min-width: 350px;
+    max-width: 700px;
+    text-align: justify;
+}
+
+article.enhance h2,
+article.enhance3 h2{
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+article.enhance ol,
+article.enhance3 ol{
+	list-style-type: upper-alpha;
+	font-size: 25px;
+	margin-left: 40px;
+}
+
+article.enhance ol>li{
+	margin: 10px 0;
+}
+
+article.enhance ol ul,
+article.enhance3 ol ul{
+	list-style-type: circle;
+	list-style-position: inside;
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+article.enhance2 span.goToLocationEnhance2{
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
+
+article.enhance2 ol li:last-child ul li{
+	margin-bottom: 5px;
+}
+
+article.enhance2 ol li:last-child ul li:last-child{
+	list-style-type: square;
+}
+
+article.enhance ul>li:nth-child(2),
+article.enhance ul>li:nth-child(4),
+article.enhance ul>li:nth-child(6){
+	list-style-type: square;
+	margin-bottom: 40px;
+}
+
+article.enhance span.goToLocation{
+	cursor: pointer;
+	text-decoration: underline;
+	color: blue;
+}
+
+article.enhance3 ul li{
+	list-style-type: square;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+/*End of enhancement page style*/
+
+/*Promotion page style*/
+article.promocont h2{
+	visibility: hidden;
+}
+
+article.promocont img{
+	display: block;
+	width: 95%;
+	min-width: 300px;	
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+/*End of promotion page style*/
+
+
+/**************************************************/
+
+
+/*
+Author: Josh Wong 
+Created: 10 April 2020
+*/
+
+/*Slide show style*/
+div.slideshowContainer {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: 650px;
+    margin-top: 68px;
+}
+
+div.slideshowContainer .imageSlides {
+	width: min-content;
+	text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
+}
+
+div.slideshowContainer .imageSlides img{
+	max-height: 100%;
+	border-radius: 30px;
+}
+
+div.slideshowContainer .imageSlides>p{
+    position: absolute;
+    z-index: 1;
+}
+
+/* This information is referenced from https://stackoverflow.com/questions/55955595/auto-manual-carousel-combination-html-css-js */
+/* add 'visible' class via Javascript */
+div.slideshowContainer .visible {
+    opacity: 1;
+}
+
+div.slideshowContainer .slideshowArrow {
+    font-size: 7em;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+div.slideshowContainer .slideshowArrow:hover {
+    opacity: 0.75;
+}
+
+div.slideshowContainer #leftArrow,
+div.slideshowContainer #rightArrow{
+    color: rgb(10, 101, 219);
+    position: absolute;
+}
+
+div.slideshowContainer #leftArrow{
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.slideshowContainer #rightArrow {
+    right: 10%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}    
+
+div.slideshowContainer .slideshowCircles {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.slideshowContainer .circle {
+    display: inline-block;
+    margin: 10px 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: solid 2px rgba(160,160,160, 0.5);
+    transition: 1s ease-in-out;
+}
+
+div.slideshowContainer .dot {
+    background-color: rgba(232,232,232, 0.8);
+    border: solid 2px rgba(160,160,160, 0.5);
+}
+
+div.slideshowContainer .imgtxt{
+    font-size: 3.3vmin;
+    min-width: 1vmax;
+    font-family: verdana, sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-shadow: 5px 5px 40px white;
+    color: #f1f1f1;
+    position: fixed;
+    bottom: 100px;
+    padding: 5px 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*End of slide show style*/
+
+/*Countdown timer style*/
+.countdown {
+	clear: both;
+	margin: 0 auto;
+	padding-top: 50px;
+	width: 80%;
+	max-width: 1200px;
+	font-family: Impact, Charcoal, sans-serif;
+	text-align: center;
+  
+}
+.countdown .header {
+	text-align: center;
+	font-weight: normal;
+	margin: 10px auto;
+	padding: 20px;
+	border-left: 50px solid rgba(0, 0, 0, 0.5);
+	border-right: 50px solid rgba(0, 0, 0, 0.5);
+	border-top: 5px dashed rgba(0, 0, 0, 0.5);
+	border-bottom: 5px dashed rgba(0, 0, 0, 0.5);
+	background-color: white;
+	border-radius: 50px;
+	max-width: 500px;
+}
+
+.countdown .square {
+	display: inline-block;
+	padding: 10px;
+	margin: 5px;
+}
+
+.countdown .digits {
+	font-size: 50px;
+	background: white;
+	color: black;
+	border: 10px double rgb(110, 110, 110);
+	padding: 30px 20px;
+	border-radius: 50%;
+}
+
+.countdown .text {
+	margin-top: 10px;
+	color: black;
+	background: #47DBE9;
+	margin-top: 20px;
+	padding: 15px 5px;
+	width: 100px;
+	border-radius: 30px;
+	border: 5px solid rgb(124, 124, 124);
+	box-shadow: 2px 2px 5px grey;
+}
+/*End of countdown timer style*/
+
+/*FAQ style*/
+article.faq{
+	box-sizing: inherit;
+}
+
+html.faq{
+	box-sizing: border-box;
+}
+
+article.faq .fsection {
+	margin: 30px auto;
+	width: 95%;
+	min-width: 200px;
+	max-width: 800px;
+	align-items:center;
+	justify-content:center;
+}
+
+article.faq h2{
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+article.faq div.fcontainer{
+	width: 100%;
+	max-width:100rem;
+	margin: 30px auto;
+}
+
+article.faq div.fi-accordion{
+	background-color: rgb(192,192,192);
+	border-radius: .4rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	box-shadow:.5rem 2px .5rem rgba(0,0,0,.2);
+}
+
+article.faq .a-link{
+	font-size: 1.6rem;
+	color:rgba(0,0,0,.8);
+	text-decoration: none;
+	background-color: rgba(192,192,192);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+
+}
+
+article.faq .fanswer{
+	max-height: 0;
+	overflow: hidden;
+	position:relative;
+	transition: max-height 650ms;
+}
+
+article.faq .fanswer::before{
+	content:"";
+	position: absolute;
+	width:.6rem;
+	height:90%;
+	background-color: blue;
+	top:50%;
+	left:0;
+	transform:translateY(-50%);
+}
+
+article.faq .fanswer p{
+	font-size:1.4rem;
+	padding:2rem;
+}
+
+article.faq .fi-accordion:hover .fanswer{
+	max-height: 100rem;
+}
+/*End of FAQ style*/
+
+/*Disclaimer and privacy style*/
+article.disclaimer,
+article.privacy{
+	font-size: 20px;
+	width: 90%;
+	max-width: 1200px;
+	margin:0 auto;
+	line-height:1.7;
+	text-align: justify;
+	padding-bottom: 50px;
+}
+
+article.disclaimer h2,
+article.privacy h2{
+	text-align: center;
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+article.disclaimer ul li{
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+article.privacy span{
+	font-family: SansBold, 'Arial Black', sans-serif;
+}
+
+article.privacy ol ol{
+	list-style-type: lower-alpha;
+}
+
+article.privacy ol ul{
+	margin-left: 25px;
+}
+
+article.privacy ol>li{
+	margin-bottom: 12px;
+}
+
+article.privacy ol>li>ul>li,
+article.privacy ol>li>ul>li>ul>li{
+	margin-bottom: 9px;
+}
+/*End of disclaimer and privacy style*/
+
+
+/*About me page*/
+div.aboutbackground{
+	background-image: url(images/aboutbackground.jpg);
+	background-size: cover;
+}
+
+div.aboutteam{
+	text-align: center;
+	padding: 20px 0;
+}
+
+div.aboutteam h2,
+div.aboutteam p{
+	
+	background-color: rgba(255, 255, 255, 0.5);
+	border-top: 5px dashed rgba(255, 255, 255, 0.4);
+	border-bottom: 5px dashed rgba(255, 255, 255, 0.4);
+
+	border-radius: 50px;
+}
+
+div.aboutteam h2{
+	font-size: 30px;
+	padding: 30px 0;
+	margin: 40px auto;
+	width: 300px;	
+	border-right: 50px solid rgba(255, 255, 255, 0.4);
+	border-left: 50px solid rgba(255, 255, 255, 0.4);
+}
+
+div.aboutteam p{
+	font-size: 20px;
+	padding: 10px 0;
+	margin: 40px auto 100px auto;
+	width: 200px;
+	border-right: 30px solid rgba(255, 255, 255, 0.4);
+	border-left: 30px solid rgba(255, 255, 255, 0.4);
+}
+
+div.about_img {
+	margin-bottom: 100px;
+}
+
+div.about_img a{
+	display: inline-block;
+	margin: 0 30px;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 10px inset rgb(0, 183, 255);
+}
+
+div.about_img a:hover{
+	transition: border 1s linear;
+	border: 10px outset rgb(0, 183, 255);
+}
+
+div.about_img a.active{	
+	border: 10px double rgb(0, 183, 255);
+}
+
+div.about_img a img{
+	width:100%;
+	filter: grayscale(50%);
+	transition: 0.4s all;
+}
+
+div.about_img a:hover > img{
+	filter: none;
+}
+
+section.aboutme{
+	font-size: 20px;
+	width: 90%;
+	max-width: 1300px;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+section.aboutme p.name{
+	font-weight: bold;
+	font-size: 200%;
+}
+
+section.aboutme p.studentid{
+	text-align: right;
+	margin-right: 5%;
+	font-family: Arial, sans-serif;
+}
+
+section.aboutme p.course{
+	color: rgb(74, 0, 247);
+	margin: 20px 0;
+}
+
+section.aboutme figure{
+	float: left;
+	border: 10px groove rgb(212, 14, 14);
+	padding: 20px;
+	margin-bottom: 30px;
+	width: 200px;
+}
+
+section.aboutme figure img{
+	width: 100%;
+}
+
+section.aboutme table{
+	border-collapse: collapse;
+	color: white;
+	border: 12px inset rgb(197, 197, 197);
+	width: 75%;
+	min-width: 600px;
+	margin: 0 auto 50px auto; /*Centred*/
+}
+
+section.aboutme th,
+section.aboutme td{
+	border: 5px double rgb(199, 199, 199);
+	background-color: #5c5c5c;
+	padding: 10px;
+}
+
+section.aboutme th{
+	font-family: "Arial Black", sans-serif;
+}
+
+section.aboutme th.first{
+	width: 130px;
+}
+
+section.aboutme table th:nth-child(1),
+section.aboutme table th:nth-child(2){
+	width: 20px;
+}
+
+section.aboutme tr td:last-child{
+	text-align: left;
+}
+
+section.aboutme table ul{
+	margin-left: 25px;
+}
+
+section.aboutme table ul li{
+	margin: 5px 0;
+}
+
+section.aboutme p.studentmail{
+	margin-bottom: 50px;
+}
+/*End of about me page*/
+
+/*Calculator page*/
+#calframe *{
+    font-family: NumF;
+}
+
+#calframe{
+	position: fixed;
+	left: 30px;
+	top: -565px;
+	border: 20px double grey;
+	border-radius: 40px;
+	background-color: rgb(248, 248, 248);
+	width: 400px;
+	z-index: 3;
+}
+
+#calcontainer{
+    width: 98%;
+    min-width: 200px;
+    max-width: 350px;
+    margin: 15px auto 25px auto;
+}
+
+#calcontainer button{
+	cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 10px rgb(158, 158, 158);
+    background-image: url(images/notclicked.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#calcontainer button:focus{
+    outline: none;
+}
+
+#calcontainer button:active{
+    box-shadow: 1px 1px 5px gray;
+    background-image: url(images/clicked.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#calTop{
+	position: relative;
+	text-align: center;
+}
+
+#calTop p{
+	display: inline-block;
+}
+
+#calClose,
+#calDirection span{
+	cursor: pointer;
+	font-size: 45px;
+	font-weight: bolder;
+	width: min-content;
+}
+
+#calClose{
+	float: left;
+}
+
+#calClose:hover,
+#calDirection span:hover{
+	color: rgb(165, 165, 165);
+}
+
+#calDirection{
+	margin: 0 auto;
+}
+
+#calDirection span{
+	font-size: 50px;
+}
+
+#calDireLeft{
+	display: none;
+}
+
+#signscreen{
+	position: absolute;
+	top: 0;
+	right: 0;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    border-radius: 50%;
+    font-size: 300%;
+    text-align: center;
+    width: 55px;
+	height: 55px;
+	float: right;
+    padding: 5px;
+}
+
+#screen{
+    border: 1px solid rgb(143, 143, 143);
+    background-color: white;
+    box-shadow: 0 0 10px inset rgb(131, 131, 131);
+    width: 95%;
+	text-align: right;
+	margin: 20px auto 30px auto;
+    padding: 5% 3% 5% 0;
+    font-size: 450%;
+    height: 70px;
+}
+
+#numbers,
+#operations{
+    display: inline-table;
+}
+
+#numbers{
+    text-align: center;
+    width: 59%;
+}
+
+#numbers button{
+    font-size: 40px;
+    border-radius: 50%;
+    width: 29.5%;
+    float: right;
+    padding: 5px;
+    margin: 3px 3px;
+}
+
+#numbers button:nth-child(10){
+    width: 29%;
+}
+
+#numbers button:last-child{
+    width: 62.5%;
+    border-radius: 30px;
+}
+
+#operations{
+    float: right;
+    width: 37%;
+    padding-right: 2.3%;
+}
+
+#operations button{
+    border-radius: 50%;
+    text-align: center;
+    float: right;
+    width: 43%;
+    margin: 4px;
+}
+
+#operations button:nth-child(1),
+#operations button:nth-child(2){
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 17px 2px;
+}
+
+#operations button:nth-child(5){
+    border-radius: 30px;
+    padding: 35px 0;
+}
+
+#operations #\+,
+#operations #\-,
+#operations #\*,
+#operations #\/,
+#operations #\={
+    font-size: 40px;
+}
+
+#operations #\+,
+#operations #\-,
+#operations #\*,
+#operations #\/{
+    padding: 4px;
+}
+
+/*End of calculator page*/
+
+
+/**************************************************/
+
+
+/* Author: Adrian Sim Huan Tze */
+/* Date: 14 April 2020 */
+
+/*Contact us style*/
+div.contactus{
+	float: left;
+	width: 100%;
+}
+
+div.contactus .imgcontact{
+	display: block;
+    clear: both;
+	width: 90%;
+	min-width: 500px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+div.contactus section{
+    float: left;
+	width: 49.5%;
+	min-width: 500px;
+	margin: 0 auto;
+}
+
+div.contactus aside{
+    float: right;
+	width: 49.5%;
+	min-width: 500px;
+    line-height: 1em;
+}
+
+div.contactus h1,
+div.contactus h2,
+div.contactus h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div.contactus h2.getintouch{
+	margin-top: 60px;
+    text-align: center;
+    color: darkblue;
+    text-shadow: 2px 2px yellow;
+   
+}
+
+div.contactus h2.msg{
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px blueviolet, 0 0 1em blue;
+    text-decoration:underline;
+}
+
+div.contactus fieldset{
+    background-color: lightsteelblue;
+    border-width: 0.1em;
+    border: 1px solid black;
+    padding: 25px;
+    margin: 25px;
+    text-align: left;
+}
+div.contactus legend{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration-color: cornflowerblue;
+    text-align: center;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: bold;
+    font-family: SansBold, "Arial Black", sans-serif;
+    background-color: white;
+    border: 2px solid deepskyblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+div.contactus #map{
+    border-width: 3em;
+    border-color: chocolate;
+}
+
+div.contactus .submit{
+    font-size: 1.2em;
+    background-color: white;
+    font-family: sans-serif;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+div.contactus .reset{
+    font-size: 1.2em;
+    background-color: white;
+    font-family: sans-serif;
+    border: 1px solid black;
+    padding: 8px;
+}
+div.contactus textarea{
+    border-radius: 2em;
+    border-style: groove;
+    border-color: teal;
+    border-width: 0.6em;
+}
+
+div.contactus .name{
+    line-height: 2em;
+    border-radius: 2em;
+    width: 20em;
+}
+
+div.contactus .email{
+    line-height: 2em;
+    border-radius: 2em;
+    width: 20em; 
+}
+
+div.contactus .contact{
+    line-height: 2em;
+    border-radius: 2em;
+    width: 20em;
+}
+
+div.contactus label{
+    font-style: normal;
+    color: black;
+    font-weight: 800;
+}
+
+div.contactus h2.asidetop{
+    font-size: 2em;
+}
+
+div.contactus .location{
+    text-align: center;
+    width: 40%;
+    line-height: 2em;
+    text-decoration: underline;
+    color: darkblue;
+}
+div.contactus .adrian{
+    width: 95%;
+    height: 90%;
+    padding: 5px;
+}
+
+div.contactus .kenny{
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+}
+
+div.contactus figcaption{
+   caption-side: bottom; 
+   text-align: initial;
+   background-color: #222;
+   color: oldlace;
+   font: italic smaller sans-serif;
+   padding: 3px;
+   width: 75%;
+}
+
+div.contactus table{
+    margin: 0 auto;
+    padding: 5px;
+    float: left;
+    max-width: 80%;
+}
+
+div.contactus td{
+    border: 10px solid white;
+    margin: 0 auto;
+}
+
+div.contactus tr{
+    float: left;
+}
+/*End of contact us style*/
+
+
+/*Terms style*/
+section.terms p{
+	text-align: justify;
+}
+
+section.terms h2{
+	clear: both;
+	font-size: 2em;
+	padding: 50px 0;
+	text-align: center;
+}
+
+section.terms {
+	font-size: 20px;
+	line-height: 1.5;
+    padding: 25px;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+section.terms ul li{
+    list-style-type: square;
+    margin-left: 30px;
+    text-align: justify;
+}
+
+section.terms ol>li{
+	margin-bottom: 30px;
+}
+
+section.terms th,
+section.terms td{
+    border: 2px solid black;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+section.terms table{
+	margin: 20px auto;
+}
+/*End of terms style*/
+
+/*Trade in style*/
+body.tradein figure{
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding-top: 100px;
+}
+
+body.tradein figure img{
+	width: 100%;
+}
+
+body.tradein section{
+	padding: 50px;
+	margin: 0 auto;
+	width: 1200px;
+	background-color: black;
+}
+
+body.tradein section h2{
+	text-align: center;
+	font-size: 4em;
+	font-weight: bold;
+	color: white;
+}
+
+body.tradein section table td{
+	color:white;
+	line-height: 1.5em;
+	font-family: inherit;
+	width: 50%;
+	font-size: 30px;
+	border-color: ivory;
+	border: 1px;
+}
+
+body.tradein section.table{
+	width: 50%;
+	margin: auto;
+	padding: 30px;
+	line-height: 1em;
+	border: 10px;
+}
+
+body.tradein .instaCash_logo{
+	width: 70%;
+	border-radius:80px;
+	position: relative;
+	left: 60px;
+}
+
+body.tradein .cart_logo{
+	border-radius:80px;
+	position: relative;
+	left: 100px;
+}
+
+body.tradein .backup_logo{
+	border-radius:80px;
+	width: 33%;
+	position: relative;
+	left: 100px;
+}
+
+body.tradein .fill_logo{
+	border-radius:70px;
+	width: 33%;
+	height: 90%;
+	position: relative;
+	left: 100px;
+}
+
+body.tradein .cashback_logo{
+	width: 35%;
+	height: 50%;
+	border-radius: 80px;
+	position: relative;
+	left: 100px;
+}
+
+body.tradein .enquiry{
+	color: ivory;
+	line-height: 1.5em;
+	font-size: 15px;
+}
+
+body.tradein article{
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+body.tradein article h2,h3{
+	line-height: 1.5em;
+}
+
+body.tradein article h3{
+	text-decoration: underline;
+}
+
+body.tradein .iphone_trade_in{
+	width:80%;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+body.tradein .mobile_trade_in{
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+body.tradein .trade_in_note {
+	width: 70%;
+	min-width: 300px;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+body.tradein .trade_in_note li{
+	text-align: left;
+	list-style-type: disc;
+	line-height: 2em;
+}
+
+body.tradein .trade_in_note{
+	padding: 50px;
+	padding-top: 10px;
+}
+/*End of trade in style*/
+
